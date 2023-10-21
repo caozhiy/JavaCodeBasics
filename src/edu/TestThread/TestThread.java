@@ -5,6 +5,7 @@ public class TestThread {
     private static int val = 1;
 
     public static void main(String[] args) {
+        f1();
         f2();
     }
 
