@@ -4,14 +4,13 @@ import java.io.*;
 
 public class TestStream {
     public static void main(String[] args) {
-        File file = new File("resource/test.txt");
+        File file = new File("test.txt");
         testCharStream(file);
         testFileStream(file);
     }
 
-
     public static void testCharStream(File file) {
-        File dst = new File("resource/c.txt");
+        File dst = new File("c.txt");
         if (!dst.exists()) {
             try {
                 dst.createNewFile();
@@ -52,7 +51,6 @@ public class TestStream {
         try (PrintStream stream = new PrintStream(System.out)) {
             stream.print("hello");
         }
-
 
     }
 
