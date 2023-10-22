@@ -4,9 +4,10 @@ import java.io.*;
 
 public class TestStream {
     public static void main(String[] args) {
-        File file = new File("test.txt");
-        testCharStream(file);
-        testFileStream(file);
+        File file = new File("resource/test.txt");
+//        testCharStream(file);
+//        testFileStream(file);
+        testDataStream(file);
     }
 
     public static void testCharStream(File file) {
@@ -93,5 +94,17 @@ public class TestStream {
             e.printStackTrace();
         }
 
+    }
+
+    public static void testDataStream(File file) {
+        try (DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
+            byte[] bytes = new byte[10];
+            int i;
+            while ((i = stream.read(bytes, 0, 10)) != -1)
+                System.out.print(new String(bytes, 0, i));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
