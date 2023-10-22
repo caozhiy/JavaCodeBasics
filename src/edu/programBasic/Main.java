@@ -8,10 +8,14 @@ package edu.programBasic;
  */
 public class Main {
     public static void func(String[] args) {
-        System.out.println("Hello World!"); // 这段代码的意思是打印HelloWorld
+        System.out.println("Hello World!"); 
         System.out.println("YYDS!");
-
-//        int a, b;
+        
+        String[] str = new String[10];
+        for(int i = 0; i <str.length;i++){
+            str[i] = new String( i * i); 
+        }
+        str.foreach(System.out::println);
         int a = 10, b = 15;
         System.out.println("a = " + a + ", b = " + b);
         final int c = 158;
